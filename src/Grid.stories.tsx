@@ -88,11 +88,11 @@ export const VariableSizeGrid: React.FC = () => {
   return (
     <Grid
       columnWidth={(index) => {
-        if (index % 3 === 0) return 200;
+        if (typeof index === "number" && index % 3 === 0) return 200;
         return 100;
       }}
       rowHeight={(index) => {
-        if (index % 2 === 0) return 40;
+        if (typeof index === "number" && index % 2 === 0) return 40;
         return 20;
       }}
     >

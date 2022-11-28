@@ -116,9 +116,10 @@ const Grid: React.FC<IProps> = (props) => {
     left: 0,
     right: 0,
   });
-  const boundedCells = useMemo(() => getBoundedCells(selectedArea), [
-    selectedArea,
-  ]);
+  const boundedCells = useMemo(
+    () => getBoundedCells(selectedArea),
+    [selectedArea]
+  );
   const handleWheel = useCallback((event: React.WheelEvent) => {
     if (wheelingRef.current) return;
     const { deltaX, deltaY, deltaMode } = event.nativeEvent;
